@@ -123,7 +123,7 @@
           </div>
           <div class="flex justify-center items-center bg-[#1DD10026] px-5 py-4 rounded-xl gap-2">
             <img src="images/seat-green.png" alt="">
-            <p class="text-lg font-medium text-[#1DD100]">40 Seats left</p>
+            <p class="text-lg font-medium text-[#1DD100] font-inter"><span id="seat-left">8</span> Seats left</p>
           </div>
         </div>
         <div class="bg-[#F7F8F8] p-8 mt-6 mx-8 rounded-3xl">
@@ -184,23 +184,23 @@
           <div class="lg:flex justify-between items-center ">
             <div class="flex items-center">
               <p class="text-[#03071280] font-medium text-lg">A</p>
-              <button class="btn m-4 px-10 text-[#03071280] font-medium text-lg">A1</button>
-              <button class="btn m-4 px-10 text-[#03071280] font-medium text-lg">A2</button>
+              <button class="btn m-4 px-10 text-[#03071280] font-medium text-lg" id="A1">A1</button>
+              <button class="btn m-4 px-10 text-[#03071280] font-medium text-lg" id="A2">A2</button>
             </div>
             <div>
-              <button class="btn m-4 px-10 text-[#03071280] font-medium text-lg">A3</button>
-              <button class="btn m-4 px-10 text-[#03071280] font-medium text-lg">A4</button>
+              <button class="btn m-4 px-10 text-[#03071280] font-medium text-lg" id="A3">A3</button>
+              <button class="btn m-4 px-10 text-[#03071280] font-medium text-lg" id="A4">A4</button>
             </div>
           </div>
           <div class="lg:flex justify-between items-center">
             <div class="flex items-center">
               <p class="text-[#03071280] font-medium text-lg">B</p>
-              <button class="btn m-4 px-10 text-[#03071280] font-medium text-lg">B1</button>
-              <button class="btn m-4 px-10 text-[#03071280] font-medium text-lg">B2</button>
+              <button class="btn m-4 px-10 text-[#03071280] font-medium text-lg" id="B1">B1</button>
+              <button class="btn m-4 px-10 text-[#03071280] font-medium text-lg" id="B2">B2</button>
             </div>
             <div>
-              <button class="btn m-4 px-10 text-[#03071280] font-medium text-lg">B3</button>
-              <button class="btn m-4 px-10 text-[#03071280] font-medium text-lg">B4</button>
+              <button class="btn m-4 px-10 text-[#03071280] font-medium text-lg" id="B3">B3</button>
+              <button class="btn m-4 px-10 text-[#03071280] font-medium text-lg" id="B4">B4</button>
             </div>
           </div>
         </div>
@@ -208,29 +208,32 @@
         <div class="lg:col-span-5">
           <h3 class="font-semibold text-2xl mb-5">Select Your Seat</h3>
           <hr>
-          <div class="bg-[#F7F8F8] p-8 my-6 rounded-xl">
+          <div class="bg-[#F7F8F8] p-8 my-6 rounded-xl font-inter">
             <div class="flex justify-between text-base font-medium text-[#030712]">
-              <p>Seat</p>
+              <div class="flex gap-1">
+                <p>Seat</p>
+                <p id="seat-num" class="bg-[#1DD100] text-white px-2 rounded ">0</p>
+              </div>
               <p>Class</p>
               <p>Price</p>
             </div>
             <hr class="my-4">
-            <div>
+            <div id="selected-seat-details">
 
             </div>
             <hr class="my-4">
             <div class="flex justify-between text-base font-medium text-[#030712]">
               <p>Total Price</p>
-              <p>BDT 0</p>
+              <p>BDT <span id="total-price">0</span></p>
             </div>
             <div class="my-4 relative">
               <input class="p-5 rounded-xl w-full" type="text" placeholder="Have any copupon?">
               <button
-                class="bg-[#1DD100] text-white px-4 py-2 rounded-lg font-medium absolute right-4 top-3">Apply</button>
+                class="bg-[#1DD100] text-white px-4 py-2 rounded-lg font-medium absolute right-4 top-3" disabled>Apply</button>
             </div>
             <div class="flex justify-between text-base font-medium text-[#030712]">
               <p>Grand Total</p>
-              <p>BDT 0</p>
+              <p>BDT <span id="grand-total">0</span></p>
             </div>
           </div>
           <p class="font-semibold text-base text-[#030712] mt-6 mb-4">Passenger Name*</p>
@@ -241,7 +244,7 @@
           <p class="font-semibold text-base text-[#030712] mt-6 mb-4">Email ID</p>
           <input class="w-full p-4 border-2 border-[#0307121A]  rounded-xl mb-4" type="email"
             placeholder="Enter your email id">
-          <button class="bg-[#1DD100] text-white py-5 text-xl font-extrabold rounded-lg w-full">Next</button>
+          <button class="bg-[#1DD100] text-white py-5 text-xl font-extrabold rounded-lg w-full " disabled>Next</button>
           <div class="lg:flex justify-center gap-7 mt-6 text-center">
             <p class="font-normal text-xl text-[#03071299] underline">Terms and Conditions</p>
             <p class="font-normal text-xl text-[#03071299] underline">Cancellation Policy</p>
