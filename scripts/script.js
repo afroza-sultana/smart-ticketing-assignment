@@ -3,12 +3,13 @@ let count = 0;
 let seatLeft = 8;
 for (const btn of allBtn) {
     btn.addEventListener('click', function (e) {
+        const setBgColor = e.target.id;
+        addBackgroundColor(setBgColor);
         count = count + 1;
         seatLeft = seatLeft - 1;
         setInnerText('seat-num', count);
         setInnerText('seat-left', seatLeft);
-        const setBgColor = e.target.id;
-        addBackgroundColor(setBgColor)
+        
         const seatDetails = document.getElementById('selected-seat-details');
         const div = document.createElement('div');
         div.innerHTML = `
@@ -34,11 +35,12 @@ function addBackgroundColor(id) {
     element.classList.add('bg-[#1DD100]', 'text-white')
 }
 
-const nextButton = document.getElementById('next-btn');
+
+
 const numberInput = document.getElementById('number-input');
 const inputValue = parseInt(numberInput.value);
 
-
+// handle grand total price 
 document.getElementById('apply-btn').addEventListener('click', function (e) {
     const input = document.getElementById('cupon-input');
     const grandTotal = document.getElementById('grand-total');
@@ -70,7 +72,6 @@ document.getElementById('apply-btn').addEventListener('click', function (e) {
     }
     input.classList.add('hidden');
     e.target.classList.add('hidden');
-
 })
 
 
