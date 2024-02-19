@@ -4,42 +4,38 @@ let seatLeft = 8;
 
 for (const btn of allBtn) {
     btn.addEventListener('click', function (e) {
-       if(count < 4){
-        e.target.disabled = true;
-        e.target.style.backgroundColor = "#1DD100";
-        e.target.style.color = "white";
-        const setBgColor = e.target.id;
-        addBackgroundColor(setBgColor);
-        count = count + 1;
-        seatLeft = seatLeft - 1;
-        setInnerText('seat-num', count);
-        setInnerText('seat-left', seatLeft);       
-        const seatDetails = document.getElementById('selected-seat-details');
-        const div = document.createElement('div');
-        div.innerHTML = `
+        if (count < 4) {
+            e.target.disabled = true;
+            e.target.style.backgroundColor = "#1DD100";
+            e.target.style.color = "white";
+            const setBgColor = e.target.id;
+            addBackgroundColor(setBgColor);
+            count = count + 1;
+            seatLeft = seatLeft - 1;
+            setInnerText('seat-num', count);
+            setInnerText('seat-left', seatLeft);
+            const seatDetails = document.getElementById('selected-seat-details');
+            const div = document.createElement('div');
+            div.innerHTML = `
         <p>${setBgColor}</p>
         <p>Economoy</p>
         <span>550</span>
     `;
-        div.classList.add('flex', 'justify-between');
-        seatDetails.appendChild(div);
-        const getPrice = count * 550;
-        const totalPrice = document.getElementById('total-price');
-        totalPrice.innerText = getPrice;
-        const grandTotal = document.getElementById('grand-total');
-        grandTotal.innerText = count * 550;
-
-        const nextButton = document.getElementById('next-btn');
-        nextButton.removeAttribute('disabled');
-        if(count == 4){
-            const applyBtn = document.getElementById('apply-btn');
-            applyBtn.removeAttribute('disabled');  
-        };
-        
-       }
-        
+            div.classList.add('flex', 'justify-between');
+            seatDetails.appendChild(div);
+            const getPrice = count * 550;
+            const totalPrice = document.getElementById('total-price');
+            totalPrice.innerText = getPrice;
+            const grandTotal = document.getElementById('grand-total');
+            grandTotal.innerText = count * 550;
+            const nextButton = document.getElementById('next-btn');         
+            nextButton.removeAttribute('disabled');
+            if (count == 4) {
+                const applyBtn = document.getElementById('apply-btn');
+                applyBtn.removeAttribute('disabled');
+            };
+        }
     });
-    
 };
 
 function setInnerText(id, value) {
@@ -49,8 +45,6 @@ function addBackgroundColor(id) {
     const element = document.getElementById(id);
     element.classList.add('bg-[#1DD100]', 'text-white');
 };
-
-
 
 // handle grand total price 
 document.getElementById('apply-btn').addEventListener('click', function (e) {
@@ -86,9 +80,9 @@ document.getElementById('apply-btn').addEventListener('click', function (e) {
     e.target.classList.add('hidden');
 });
 
-document.getElementById('buy-ticket').addEventListener('click',function(){
+document.getElementById('buy-ticket').addEventListener('click', function () {
     const interface = document.getElementById('interface');
-    interface.scrollIntoView({behavior:'smooth'});
+    interface.scrollIntoView({ behavior: 'smooth' });
 })
 
 
