@@ -1,15 +1,19 @@
 const allBtn = document.getElementsByClassName('btn');
 let count = 0;
 let seatLeft = 8;
+
 for (const btn of allBtn) {
     btn.addEventListener('click', function (e) {
+       if(count < 4){
+        e.target.disabled = true;
+        e.target.style.backgroundColor = "#1DD100";
+        e.target.style.color = "white";
         const setBgColor = e.target.id;
         addBackgroundColor(setBgColor);
         count = count + 1;
         seatLeft = seatLeft - 1;
         setInnerText('seat-num', count);
-        setInnerText('seat-left', seatLeft);
-        
+        setInnerText('seat-left', seatLeft);       
         const seatDetails = document.getElementById('selected-seat-details');
         const div = document.createElement('div');
         div.innerHTML = `
@@ -24,21 +28,29 @@ for (const btn of allBtn) {
         totalPrice.innerText = getPrice;
         const grandTotal = document.getElementById('grand-total');
         grandTotal.innerText = count * 550;
-    })
-}
+
+        const nextButton = document.getElementById('next-btn');
+        nextButton.removeAttribute('disabled');
+        if(count == 4){
+            const applyBtn = document.getElementById('apply-btn');
+            applyBtn.removeAttribute('disabled');  
+        };
+        
+       }
+        
+    });
+    
+};
 
 function setInnerText(id, value) {
     document.getElementById(id).innerText = value;
-}
+};
 function addBackgroundColor(id) {
     const element = document.getElementById(id);
-    element.classList.add('bg-[#1DD100]', 'text-white')
-}
+    element.classList.add('bg-[#1DD100]', 'text-white');
+};
 
 
-
-const numberInput = document.getElementById('number-input');
-const inputValue = parseInt(numberInput.value);
 
 // handle grand total price 
 document.getElementById('apply-btn').addEventListener('click', function (e) {
@@ -69,12 +81,15 @@ document.getElementById('apply-btn').addEventListener('click', function (e) {
         discount.appendChild(div);
         const price = parseInt(grandTotal.innerText) - discountPrice;
         grandTotal.innerText = price;
-    }
+    };
     input.classList.add('hidden');
     e.target.classList.add('hidden');
+});
+
+document.getElementById('buy-ticket').addEventListener('click',function(){
+    const interface = document.getElementById('interface');
+    interface.scrollIntoView({behavior:'smooth'});
 })
-
-
 
 
 
