@@ -224,12 +224,14 @@
             <hr class="my-4">
             <div class="flex justify-between text-base font-medium text-[#030712]">
               <p>Total Price</p>
+              
               <p>BDT <span id="total-price">0</span></p>
             </div>
+            <div id="discount"></div>
             <div class="my-4 relative">
-              <input class="p-5 rounded-xl w-full" type="text" placeholder="Have any copupon?">
-              <button
-                class="bg-[#1DD100] text-white px-4 py-2 rounded-lg font-medium absolute right-4 top-3" disabled>Apply</button>
+              <input id="cupon-input" class="p-5 rounded-xl w-full" type="text" placeholder="Have any copupon?">
+              <button id="apply-btn"
+                class="bg-[#1DD100] text-white px-4 py-2 rounded-lg font-medium absolute right-4 top-3" >Apply</button>
             </div>
             <div class="flex justify-between text-base font-medium text-[#030712]">
               <p>Grand Total</p>
@@ -239,12 +241,12 @@
           <p class="font-semibold text-base text-[#030712] mt-6 mb-4">Passenger Name*</p>
           <input class="w-full p-4 border-2 border-[#0307121A]  rounded-xl" type="text" placeholder="Enter your name">
           <p class="font-semibold text-base text-[#030712] mt-6 mb-4">Phone Number*</p>
-          <input class="w-full p-4 border-2 border-[#0307121A]  rounded-xl " type="number"
+          <input id="number-input" class="w-full p-4 border-2 border-[#0307121A]  rounded-xl "
             placeholder="Enter your phone number">
           <p class="font-semibold text-base text-[#030712] mt-6 mb-4">Email ID</p>
           <input class="w-full p-4 border-2 border-[#0307121A]  rounded-xl mb-4" type="email"
             placeholder="Enter your email id">
-          <button class="bg-[#1DD100] text-white py-5 text-xl font-extrabold rounded-lg w-full " disabled>Next</button>
+          <button id="next-btn" class="bg-[#1DD100] text-white py-5 text-xl font-extrabold rounded-lg w-full " >Next</button>
           <div class="lg:flex justify-center gap-7 mt-6 text-center">
             <p class="font-normal text-xl text-[#03071299] underline">Terms and Conditions</p>
             <p class="font-normal text-xl text-[#03071299] underline">Cancellation Policy</p>
